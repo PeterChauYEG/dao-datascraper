@@ -12,5 +12,5 @@ describe('Datascraper', function() {
     it('should return a String');
     it('should return a JSON object');
     it('should return a csv object');
-    it('should return a output a csv file to output/');
+    it('should export a csv file to output/');
 });
