@@ -1,0 +1,1 @@
+This folder contains the CSV output of ```npm start```

@@ -1,3 +1,5 @@
+'use strict';
+
 // require npm modules
 const fs = require('fs');
 

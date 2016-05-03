@@ -11,13 +11,13 @@ Donations: 0x1A416af553Faca53b4be48DCFB6E749C9737455D
 
 ## How to use
 
-1. Clone this repo with ```git pull https://github.com/PeterChauYEG/dao-datascraper.git``` or with [Cloud9 IDE][Cloud9 IDE]
+1. Clone this repo with ```git clone https://github.com/PeterChauYEG/dao-datascraper.git``` or with [Cloud9 IDE][Cloud9 IDE]
 2. [Install Node][install node]
 3. Install NPM packages with: ```npm install```
 4. Get the entire DAO transaction log: ```npm start```
 5. Your .csv file can be found in the ```output/``` folder
 
 [Cloud9 IDE]: https://c9.io/c/JVUChbVycba
-[Latest Release]: https://github.com/PeterChauYEG/dao-datascraper/releases/tag/v1.0.3
+[Latest Release]: https://github.com/PeterChauYEG/dao-datascraper/releases/tag/v1.0.4
 [install node]: https://nodejs.org/en/
 [Powered by Etherscan.io APIs]: https://etherscan.io/apis
