@@ -14,7 +14,8 @@
   },
   "scripts": {
     "start": "node main.js",
-    "test": "eslint main.js"
+    "lint": "eslint main.js",
+    "test": "npm run lint && mocha --reporter spec"
   },
   "keywords": [
     "dao",
@@ -30,6 +31,8 @@
   },
   "homepage": "https://github.com/PeterChauYEG/dao-datascraper#readme",
   "devDependencies": {
-    "eslint": "^2.9.0"
+    "chai": "^3.5.0",
+    "eslint": "^2.9.0",
+    "mocha": "^2.4.5"
   }
 }
