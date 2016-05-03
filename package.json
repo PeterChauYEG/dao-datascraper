@@ -28,5 +28,7 @@
     "url": "https://github.com/PeterChauYEG/dao-datascraper/issues"
   },
   "homepage": "https://github.com/PeterChauYEG/dao-datascraper#readme",
-  "devDependencies": {}
+  "devDependencies": {
+    "eslint": "^2.9.0"
+  }
 }

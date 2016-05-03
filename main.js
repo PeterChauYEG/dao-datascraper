@@ -10,22 +10,22 @@ const date = new Date();
 const file = `output/${date}.csv`;
 const fields = ['blockNumber', 'timeStamp', 'hash', 'nonce', 'blockHash', 'transactionIndex', 'from', 'to', 'value', 'gas', 'gasPrice', 'input', 'contractAddress', 'cumulativeGasUsed', 'gasUsed', 'confirmations'];
 
-console.log("DAO-datalogger\ninitialized!");
+process.stdout.write('DAO-datascraper initialized!\n');
 
 // get data from the etherscan.io api https://etherscan.io/apis
 https.get(`https://api.etherscan.io/api?module=account&action=txlist&address=${address}&sort=asc`, (res) => {
 
-    console.log('statusCode: ', res.statusCode);
+    process.stdout.write(`StatusCode: ${res.statusCode}\n`);
 
     res.setEncoding('utf8');
 
     res.pipe(bl((err, data) => {
 
         if (err) {
-            console.log(`Error: ${err}`);
+            process.stdout.write(`Error: ${err}\n`);
         }
 
-        console.log('getting DAO transaction logs from etherscan');
+        process.stdout.write('Getting DAO transaction logs from etherscan\n');
 
         const json = JSON.parse(data);
 
@@ -35,16 +35,16 @@ https.get(`https://api.etherscan.io/api?module=account&action=txlist&address=${a
         }, (err, csv) => {
 
             if (err) {
-                console.log(`Error: ${err}`);
+                process.stdout.write(`Error: ${err}\n`);
             }
 
             fs.writeFile(file, csv, (err) => {
 
                 if (err) {
-                    console.log(`Error: ${err}`);
+                    process.stdout.write(`Error: ${err}\n`);
                 }
 
-                console.log(`File saved: ${file}`);
+                process.stdout.write(`File saved: ${file}\n`);
 
             });
 
@@ -54,6 +54,6 @@ https.get(`https://api.etherscan.io/api?module=account&action=txlist&address=${a
 
 }).on('error', (err) => {
 
-    console.log(`Error: ${err}`);
+    process.stdout.write(`Error: ${err}\n`);
 
 });
