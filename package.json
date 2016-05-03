@@ -14,7 +14,7 @@
   },
   "scripts": {
     "start": "node main.js",
-    "lint": "eslint main.js",
+    "lint": "eslint *.js",
     "test": "npm run lint && mocha --reporter spec"
   },
   "keywords": [
@@ -33,6 +33,7 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "eslint": "^2.9.0",
-    "mocha": "^2.4.5"
+    "mocha": "^2.4.5",
+    "request": "^2.72.0"
   }
 }
