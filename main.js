@@ -6,10 +6,10 @@ const https = require('https');
 
 // require modules
 const exportAsCsv = require('./exportAsCsv.js');
+const address = require('./settings.js').address;
 
 // set up variables
 // DAO Ethereum address
-const address = '0xbb9bc244d798123fde783fcc1c72d3bb8c189413';
 const date = new Date();
 // path/to/csv
 const outputPath = `output/${date}.csv`;
