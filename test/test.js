@@ -1,3 +1,5 @@
+'use strict';
+
 // require npm packages
 const assert = require('chai').assert;
 const expect = require('chai').expect;
@@ -28,17 +30,6 @@ describe('Datascraper', function() {
         const csv = exportAsCsv(json, field, outputPath);
         
         assert.isString(csv, 'sometest');
-    });
-
-    it('should save a csv file to output/', function() {
-        const json = {
-            result: {
-                test: 'some test value'
-            }
-        };
-        const outputPath = 'output/test.csv';
-        
-        assert.equal(saveData(outputPath, json), 'success');
     });
     
 });

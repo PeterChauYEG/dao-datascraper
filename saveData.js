@@ -3,8 +3,6 @@
 // require npm modules
 const fs = require('fs');
 
-let status = '';
-
 module.exports = (outputPath, data) => {
 
     // save data to outputPath
@@ -16,10 +14,6 @@ module.exports = (outputPath, data) => {
 
         process.stdout.write(`File saved: ${outputPath}\n`);
 
-        status = 'success';
-
     });
-
-    return status;
 
 };
