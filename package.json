@@ -10,6 +10,7 @@
   "author": "Mostafa Eweda <mo.eweda@gmail.com>",
   "dependencies": {
     "bl": "^1.1.2",
+    "chai-http": "^2.0.1",
     "json2csv": "^3.3.0"
   },
   "scripts": {

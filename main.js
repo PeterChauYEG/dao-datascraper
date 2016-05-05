@@ -20,31 +20,37 @@ process.stdout.write('DAO-datascraper initialized!\n');
 
 // get data from the etherscan.io api https://etherscan.io/apis
 // Make https request
-https.get(`https://api.etherscan.io/api?module=account&action=txlist&address=${address}&sort=asc`, (res) => {
+const server = () => {
+    https.get(`https://api.etherscan.io/api?module=account&action=txlist&address=${address}&sort=asc`, (res) => {
 
-    process.stdout.write(`StatusCode: ${res.statusCode}\n`);
+        process.stdout.write(`StatusCode: ${res.statusCode}\n`);
 
-    // return a String not an Buffer
-    res.setEncoding('utf8');
-    // wait for and combine all responses
-    res.pipe(bl((err, data) => {
+        // return a String not an Buffer
+        res.setEncoding('utf8');
+        // wait for and combine all responses
+        res.pipe(bl((err, data) => {
 
-        if (err) {
-            process.stdout.write(`Error: ${err}\n`);
-        }
+            if (err) {
+                process.stdout.write(`Error: ${err}\n`);
+            }
 
-        process.stdout.write('Getting DAO transaction logs from etherscan\n');
+            process.stdout.write('Getting DAO transaction logs from etherscan\n');
 
-        // convert to JSON
-        const json = JSON.parse(data);
+            // convert to JSON
+            const json = JSON.parse(data);
 
-        // convert to csv
-        exportAsCsv(json, fields, outputPath);
+            // convert to csv
+            exportAsCsv(json, fields, outputPath);
 
-    }));
+        }));
 
-}).on('error', (err) => {
+    }).on('error', (err) => {
 
-    process.stdout.write(`Error: ${err}\n`);
+        process.stdout.write(`Error: ${err}\n`);
 
-});
+    });
+};
+
+server();
+
+module.exports = server;
