@@ -17,7 +17,7 @@ describe('Datascraper', function() {
             done();
         });
 
-    });
+    }).timeout(5000);
 
     it('exportAsCsv', function() {
         const json = {
