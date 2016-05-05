@@ -8,7 +8,6 @@ const request = require('request');
 // require code to test
 const address = require('../settings.js').address;
 const exportAsCsv = require('../exportAsCsv.js');
-const saveData = require('../saveData.js');
 
 describe('Datascraper', function() {
     it('should return a https response with the status code: 200', function(done) {
