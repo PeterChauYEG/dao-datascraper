@@ -1,5 +1,9 @@
+'use strict';
+
 // require npm modules
 const fs = require('fs');
+
+let status = '';
 
 module.exports = (outputPath, data) => {
 
@@ -12,6 +16,10 @@ module.exports = (outputPath, data) => {
 
         process.stdout.write(`File saved: ${outputPath}\n`);
 
+        status = 'success';
+
     });
+
+    return status;
 
 };
