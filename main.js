@@ -25,7 +25,7 @@ const server = () => {
 
         process.stdout.write(`StatusCode: ${res.statusCode}\n`);
 
-        // return a String not an Buffer
+        // set res to String not an Buffer
         res.setEncoding('utf8');
         // wait for and combine all responses
         res.pipe(bl((err, data) => {

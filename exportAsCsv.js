@@ -1,8 +1,12 @@
+'use strict';
+
 // require npm packages
 const json2csv = require('json2csv');
 
 // require modules
 const saveData = require('./saveData.js');
+
+let csvExport = 0;
 
 module.exports = (json, fields, outputPath) => {
 
@@ -19,6 +23,9 @@ module.exports = (json, fields, outputPath) => {
         // save csv to output/
         saveData(outputPath, csv);
 
+        csvExport = csv;
+
     });
 
+    return csvExport;
 };

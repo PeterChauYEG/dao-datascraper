@@ -4,8 +4,9 @@ const expect = require('chai').expect;
 const request = require('request');
 
 // require code to test
-const main = require('../main.js');
 const address = require('../settings.js').address;
+const exportAsCsv = require('../exportAsCsv.js');
+const saveData = require('../saveData.js');
 
 describe('Datascraper', function() {
     it('should return a https response with the status code: 200', function(done) {
@@ -15,10 +16,29 @@ describe('Datascraper', function() {
         });
 
     });
+
+    it('exportAsCsv', function() {
+        const json = {
+            result: {
+                test: 'some test value'
+            }
+        };
+        const field = ['test'];
+        const outputPath = 'output/test.csv';
+        const csv = exportAsCsv(json, field, outputPath);
+        
+        assert.isString(csv, 'sometest');
+    });
+
+    it('should save a csv file to output/', function() {
+        const json = {
+            result: {
+                test: 'some test value'
+            }
+        };
+        const outputPath = 'output/test.csv';
+        
+        assert.equal(saveData(outputPath, json), 'success');
+    });
     
-    // pending test below
-    it('should return a String');
-    it('should return a JSON object');
-    it('should return a csv object');
-    it('should export a csv file to output/');
 });
