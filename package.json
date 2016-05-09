@@ -15,6 +15,7 @@
   },
   "scripts": {
     "start": "node main.js",
+    "export-json": "node main.js json",
     "lint": "eslint *.js",
     "test": "npm run lint && mocha --reporter spec"
   },

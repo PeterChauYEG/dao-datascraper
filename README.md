@@ -14,7 +14,8 @@ Donations: 0x1A416af553Faca53b4be48DCFB6E749C9737455D
 1. Clone this repo with ```git clone https://github.com/PeterChauYEG/dao-datascraper.git``` or with [Cloud9 IDE][Cloud9 IDE]
 2. [Install Node][install node]
 3. Install NPM packages with: ```npm install```
-4. Get the entire DAO transaction log: ```npm start```
+4a. Get the entire DAO transaction log as a CSV: ```npm start```
+4b. Get the entire DAO transaction log as a json: ```npm start -- json``` or ```npm run-script export-json```
 5. Your .csv file can be found in the ```output/``` folder
 
 [Cloud9 IDE]: https://c9.io/c/JVUChbVycba

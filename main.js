@@ -5,14 +5,18 @@ const bl = require('bl');
 const https = require('https');
 
 // require modules
-const exportAsCsv = require('./exportAsCsv.js');
 const address = require('./settings.js').address;
+const exportAsCsv = require('./exportAsCsv.js');
+const exportAsJson = require('./exportAsJson.js');
 
 // set up variables
+const clArg = 2;
+// Export as JSON or CSV?
+const exportAs = process.argv[clArg];
 // DAO Ethereum address
 const date = new Date();
 // path/to/csv
-const outputPath = `output/${date}.csv`;
+const outputPath = `output/${date}`;
 // csv field headers
 const fields = ['blockNumber', 'timeStamp', 'hash', 'nonce', 'blockHash', 'transactionIndex', 'from', 'to', 'value', 'gas', 'gasPrice', 'input', 'contractAddress', 'cumulativeGasUsed', 'gasUsed', 'confirmations'];
 
@@ -39,8 +43,14 @@ const server = () => {
             // convert to JSON
             const json = JSON.parse(data);
 
-            // convert to csv
-            exportAsCsv(json, fields, outputPath);
+            // What format do we want to export our data as?
+            if (exportAs === 'json') {
+                // export as json
+                exportAsJson(json, outputPath);
+            } else {
+                // export as csv
+                exportAsCsv(json, fields, outputPath);
+            }
 
         }));
 

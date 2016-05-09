@@ -20,8 +20,10 @@ module.exports = (json, fields, outputPath) => {
             process.stdout.write(`Error: ${err}\n`);
         }
 
+        const path = `${outputPath}.csv`;
+
         // save csv to output/
-        saveData(outputPath, csv);
+        saveData(path, csv);
 
         csvExport = csv;
 
