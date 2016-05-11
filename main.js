@@ -15,8 +15,14 @@ const clArg = 2;
 const exportAs = process.argv[clArg];
 // DAO Ethereum address
 const date = new Date();
+const formattedDate = {
+    day: date.getDate(),
+    month: date.getMonth(),
+    year: date.getFullYear()
+};
+
 // path/to/csv
-const outputPath = `output/${date}`;
+const outputPath = `output/${formattedDate.year}_${formattedDate.month}_${formattedDate.day}`;
 // csv field headers
 const fields = ['blockNumber', 'timeStamp', 'hash', 'nonce', 'blockHash', 'transactionIndex', 'from', 'to', 'value', 'gas', 'gasPrice', 'input', 'contractAddress', 'cumulativeGasUsed', 'gasUsed', 'confirmations'];
 
