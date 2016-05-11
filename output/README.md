@@ -1,1 +1,1 @@
-This folder contains the CSV output of ```npm start```
+This folder contains the CSV output of ```npm start``` and the JSON output of ```npm run-script export-json```
