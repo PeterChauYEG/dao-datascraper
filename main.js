@@ -6,6 +6,7 @@ const https = require('https');
 
 // require modules
 const address = require('./settings.js').address;
+const sortOrder = require('./settings.js').sortOrder;
 const exportAsCsv = require('./exportAsCsv.js');
 const exportAsJson = require('./exportAsJson.js');
 
@@ -31,7 +32,7 @@ process.stdout.write('DAO-datascraper initialized!\n');
 // get data from the etherscan.io api https://etherscan.io/apis
 // Make https request
 const server = () => {
-    https.get(`https://api.etherscan.io/api?module=account&action=txlist&address=${address}&sort=asc`, (res) => {
+    https.get(`https://api.etherscan.io/api?module=account&action=txlist&address=${address}&sort=${sortOrder}`, (res) => {
 
         process.stdout.write(`StatusCode: ${res.statusCode}\n`);
 
