@@ -19,7 +19,7 @@ Donations: 0x1A416af553Faca53b4be48DCFB6E749C9737455D
 5b. Get the entire DAO transaction log as a json: ```npm start -- json``` or ```npm run-script export-json```
 6. Your .csv or .json file can be found in the ```output/``` folder in the format ```YYYY-MM-DD```
 
-Note: the etherscan api returns a maximum of 10000 transaction (tx) records for this query. If your total number of tx is more than 10k you may want to adjust the tx offset in settings.js and run this multiple times to get the full list of tx.
+Note: the etherscan api returns a maximum of 10000 transaction (tx) records for this query. If your total number of tx is more than 10k you may want to adjust the startblock number in settings.js and run this multiple times to get the full list of tx.
 
 [Cloud9 IDE]: https://c9.io/c/JVUChbVycba
 [Latest Release]: https://github.com/PeterChauYEG/dao-datascraper/releases/tag/v1.0.5
